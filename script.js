@@ -63,25 +63,26 @@ class Calculator{
         let integerDisplay
         if (isNaN(integerDigits)) {
            integerDisplay = ''
-       } else {
+        } else {
             integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
         }
         if (decimalDigits != null) {
-            return'${integerDisplay}.${decimalDigits}'
+            return `${integerDisplay}.${decimalDigits}`
         } else {
             return integerDisplay
         }
     }
 
     updateDisplay() {
-        this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
+        this.currentOperandTextElement.innerText =
+          this.getDisplayNumber(this.currentOperand)
         if (this.operation != null) {
-            this.previousOperandTextElement.innerText =
-             '${this.getDisplayNumber(this.previousOperand)} ${this.operation}'
+          this.previousOperandTextElement.innerText =
+            `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
         } else {
-            this.previousOperandTextElement.innerText = ''
+          this.previousOperandTextElement.innerText = ''
         }
-    }
+      }
 }
 
 
